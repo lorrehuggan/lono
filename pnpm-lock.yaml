@@ -22,7 +22,7 @@ importers:
         version: 0.15.1(solid-js@1.9.3)
       '@solidjs/start':
         specifier: ^1.0.10
-        version: 1.0.10(solid-js@1.9.3)(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))
+        version: 1.0.10(solid-js@1.9.3)(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))
       arctic:
         specifier: ^2.2.2
         version: 2.2.2
@@ -40,13 +40,10 @@ importers:
         version: 16.4.5
       drizzle-orm:
         specifier: ^0.36.1
-        version: 0.36.1(@libsql/client@0.14.0)
+        version: 0.36.1(@libsql/client@0.14.0)(react@18.3.1)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.36.1(@libsql/client@0.14.0))(zod@3.23.8)
-      lucide-solid:
-        specifier: ^0.456.0
-        version: 0.456.0(solid-js@1.9.3)
+        version: 0.5.1(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(zod@3.23.8)
       postcss:
         specifier: ^8.4.38
         version: 8.4.47
@@ -61,7 +58,7 @@ importers:
         version: 3.4.14
       vinxi:
         specifier: ^0.4.3
-        version: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
+        version: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -2525,16 +2522,15 @@ packages:
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
+  loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
-
-  lucide-solid@0.456.0:
-    resolution: {integrity: sha512-GNpxCduirznNl6J0Xlc4chRGpmuPzcAzuD29Xki+kq/TxBu0L4wTUB/PC9HkRITzDidyKQ19j3yOdJrKQmYoTg==}
-    peerDependencies:
-      solid-js: ^1.4.7
 
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
@@ -2956,6 +2952,10 @@ packages:
 
   rc9@2.1.2:
     resolution: {integrity: sha512-btXCnMmRIBINM2LDZoEmOogIZU7Qe7zn4BpomSKZ/ykbLObuBdvG+mFq11DL6fjH1DRwHhrlgtYWG96bJiC7Cg==}
+
+  react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+    engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -4483,11 +4483,11 @@ snapshots:
     dependencies:
       solid-js: 1.9.3
 
-  '@solidjs/start@1.0.10(solid-js@1.9.3)(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))':
+  '@solidjs/start@1.0.10(solid-js@1.9.3)(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))(vite@5.4.10(@types/node@22.9.0)(terser@5.36.0))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
-      '@vinxi/server-components': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
-      '@vinxi/server-functions': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
+      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
+      '@vinxi/server-components': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
+      '@vinxi/server-functions': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
       defu: 6.1.4
       error-stack-parser: 2.1.4
       html-to-image: 1.11.11
@@ -4589,7 +4589,7 @@ snapshots:
     transitivePeerDependencies:
       - uWebSockets.js
 
-  '@vinxi/plugin-directives@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))':
+  '@vinxi/plugin-directives@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))':
     dependencies:
       '@babel/parser': 7.26.2
       acorn: 8.14.0
@@ -4600,29 +4600,29 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.9
       tslib: 2.8.1
-      vinxi: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
+      vinxi: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
 
-  '@vinxi/server-components@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))':
+  '@vinxi/server-components@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
+      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
       acorn: 8.14.0
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.14.0)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
+      vinxi: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
 
-  '@vinxi/server-functions@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))':
+  '@vinxi/server-functions@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))':
     dependencies:
-      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
+      '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3))
       acorn: 8.14.0
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.14.0)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
+      vinxi: 0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
 
   abbrev@1.1.1: {}
 
@@ -4955,10 +4955,10 @@ snapshots:
       '@deno/shim-deno': 0.19.2
       undici-types: 5.28.4
 
-  db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)):
+  db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1)):
     optionalDependencies:
       '@libsql/client': 0.14.0
-      drizzle-orm: 0.36.1(@libsql/client@0.14.0)
+      drizzle-orm: 0.36.1(@libsql/client@0.14.0)(react@18.3.1)
 
   debug@2.6.9:
     dependencies:
@@ -5011,13 +5011,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.36.1(@libsql/client@0.14.0):
+  drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1):
     optionalDependencies:
       '@libsql/client': 0.14.0
+      react: 18.3.1
 
-  drizzle-zod@0.5.1(drizzle-orm@0.36.1(@libsql/client@0.14.0))(zod@3.23.8):
+  drizzle-zod@0.5.1(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(zod@3.23.8):
     dependencies:
-      drizzle-orm: 0.36.1(@libsql/client@0.14.0)
+      drizzle-orm: 0.36.1(@libsql/client@0.14.0)(react@18.3.1)
       zod: 3.23.8
 
   duplexer@0.1.2: {}
@@ -5639,15 +5640,16 @@ snapshots:
 
   lodash@4.17.21: {}
 
+  loose-envify@1.4.0:
+    dependencies:
+      js-tokens: 4.0.0
+    optional: true
+
   lru-cache@10.4.3: {}
 
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
-
-  lucide-solid@0.456.0(solid-js@1.9.3):
-    dependencies:
-      solid-js: 1.9.3
 
   magic-string@0.30.12:
     dependencies:
@@ -5738,7 +5740,7 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  nitropack@2.10.4(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(typescript@5.6.3):
+  nitropack@2.10.4(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(typescript@5.6.3):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
@@ -5762,7 +5764,7 @@ snapshots:
       cookie-es: 1.2.2
       croner: 9.0.0
       crossws: 0.3.1
-      db0: 0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))
+      db0: 0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))
       defu: 6.1.4
       destr: 2.0.3
       dot-prop: 9.0.0
@@ -6050,6 +6052,11 @@ snapshots:
     dependencies:
       defu: 6.1.4
       destr: 2.0.3
+
+  react@18.3.1:
+    dependencies:
+      loose-envify: 1.4.0
+    optional: true
 
   read-cache@1.0.0:
     dependencies:
@@ -6544,7 +6551,7 @@ snapshots:
 
   validate-html-nesting@1.2.2: {}
 
-  vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3):
+  vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.9.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3):
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.0)
@@ -6566,7 +6573,7 @@ snapshots:
       hookable: 5.5.3
       http-proxy: 1.18.1
       micromatch: 4.0.8
-      nitropack: 2.10.4(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0))(typescript@5.6.3)
+      nitropack: 2.10.4(@libsql/client@0.14.0)(drizzle-orm@0.36.1(@libsql/client@0.14.0)(react@18.3.1))(typescript@5.6.3)
       node-fetch-native: 1.6.4
       path-to-regexp: 6.3.0
       pathe: 1.1.2

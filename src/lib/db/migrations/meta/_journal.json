@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1731635455401,
+      "tag": "20241115015055_naive_nightshade",
+      "breakpoints": true
+    }
+  ]
+}

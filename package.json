@@ -4,7 +4,12 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "db:migrate": "tsx db/migrate.ts",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:push": "drizzle-kit push --config=drizzle.config.ts",
+    "db:studio": "drizzle-kit studio",
+    "db:start": "turso dev --db-file database/local.db"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
@@ -19,7 +24,6 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.36.1",
     "drizzle-zod": "^0.5.1",
-    "lucide-solid": "^0.456.0",
     "postcss": "^8.4.38",
     "solid-js": "^1.9.2",
     "tailwind-merge": "^2.5.4",
